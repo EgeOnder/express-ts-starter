@@ -1,0 +1,28 @@
+{
+	"name": "express-ts-starter",
+	"version": "1.0.0",
+	"main": "source/server.ts",
+	"scripts": {
+		"build": "rm -rf build/ && prettier --write source/ && tsc",
+		"serve": "nodemon"
+	},
+	"repository": "https://github.com/EgeOnder/express-ts-starter.git",
+	"author": "Ege Önder <40398628+EgeOnder@users.noreply.github.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/cors": "^2.8.12",
+		"@types/dotenv": "^8.2.0",
+		"@types/express": "^4.17.13",
+		"@types/mongoose": "^5.11.97",
+		"@typescript-eslint/eslint-plugin": "^5.4.0",
+		"@typescript-eslint/parser": "^5.4.0",
+		"dotenv": "^10.0.0",
+		"eslint": "^8.3.0",
+		"nodemon": "^2.0.15"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"mongoose": "^6.0.13"
+	}
+}

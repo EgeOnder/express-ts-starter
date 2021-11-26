@@ -2,5 +2,6 @@
 Typescript express backend starter code with mongoose and all types installed.
 
 ## Todos
-[ ] Add babeljs
-[ ] Configure webpackjs
+
+-   [ ] Add babeljs
+-   [ ] Configure webpackjs

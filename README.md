@@ -6,6 +6,8 @@ Typescript express backend starter code with mongoose and all types installed.
 
 -   [ ] Add babeljs
 -   [ ] Configure webpackjs
+-   [ ] Add GraphQL and ORM
+-   [ ] Testing with Jest
 
 # Installation
 

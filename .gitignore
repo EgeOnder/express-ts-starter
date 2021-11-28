@@ -2,6 +2,9 @@
 # recreated with yarn build
 build/
 
+# Ignore .DS_STORE file
+.DS_Store
+
 # Logs
 logs
 *.log

@@ -1,3 +1,7 @@
+# Build folder can be
+# recreated with yarn build
+build/
+
 # Logs
 logs
 *.log

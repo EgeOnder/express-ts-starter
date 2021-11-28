@@ -8,7 +8,15 @@ const connectDB = async (connectionString: any) => {
         .then(() =>
             logging.success(NAMESPACE, 'MongoDB connection established')
         )
-        .catch((err) => logging.error(NAMESPACE, err.message));
+        .catch((err) => {
+            logging.error(NAMESPACE, err.message);
+
+            if (err.message.includes('Invalid connection string'))
+                logging.info(
+                    NAMESPACE,
+                    'Please check your .env file and configure it.'
+                );
+        });
 };
 
 export default connectDB;

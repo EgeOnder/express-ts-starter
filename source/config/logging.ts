@@ -1,25 +1,41 @@
 const getTimeStamp = (): string => {
-	return new Date().toISOString();
+    return new Date().toISOString();
 };
 
 const info = (namespace: string, message: string, object?: unknown) => {
-	if (object) console.info(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`, object);
-	else console.info(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`);
+    if (object)
+        console.info(
+            `[${getTimeStamp()}] [INFO] [${namespace}] ${message}`,
+            object
+        );
+    else console.info(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`);
 };
 
 const warn = (namespace: string, message: string, object?: unknown) => {
-	if (object) console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`, object);
-	else console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`);
+    if (object)
+        console.warn(
+            `[${getTimeStamp()}] [WARN] [${namespace}] ${message}`,
+            object
+        );
+    else console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`);
 };
 
 const error = (namespace: string, message: string, object?: unknown) => {
-	if (object) console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`, object);
-	else console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`);
+    if (object)
+        console.error(
+            `[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`,
+            object
+        );
+    else console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`);
 };
 
 const success = (namespace: string, message: string, object?: unknown) => {
-	if (object) console.log(`[${getTimeStamp()}] [SUCCESS] [${namespace}] ${message}`, object);
-	else console.log(`[${getTimeStamp()}] [SUCCESS] [${namespace}] ${message}`);
+    if (object)
+        console.log(
+            `[${getTimeStamp()}] [SUCCESS] [${namespace}] ${message}`,
+            object
+        );
+    else console.log(`[${getTimeStamp()}] [SUCCESS] [${namespace}] ${message}`);
 };
 
 export default { info, warn, error, success };

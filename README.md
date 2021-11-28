@@ -6,16 +6,15 @@ Typescript express backend starter code with mongoose and all types installed.
 
 -   [ ] Add babeljs
 -   [ ] Configure webpackjs
--   [ ] Add GraphQL and ORM
--   [ ] Testing with Jest
+-   [x] Testing with Jest
 -   [ ] Authentication and mailer
 -   [ ] Manage cookies
--   [ ] Rate limiting
+-   [x] Rate limiting
 
 # Installation
 
 -   Rename .env.sample to .env
 -   Run `yarn install`
--   `yarn run serve` to serve with nodemon
--   `yarn start` to serve with node
--   `yarn run build` build into vanilla JS using tsc
+-   `yarn serve` to serve with nodemon
+-   `yarn test` to test endpoints with Jest and Supertest.
+-   `yarn build` build into vanilla JS using tsc

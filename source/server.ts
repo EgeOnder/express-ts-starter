@@ -3,52 +3,41 @@ import cors from 'cors';
 
 import config from './config/config';
 import logging from './config/logging';
-import connectDB from './controllers/connectMongo';
+import connectDB from './controllers/mongodb';
 
-import indexRoutes from './routes/index';
+import rateLimit from 'express-rate-limit';
+
+import routes from './routes';
+import notFound from './controllers/notFound';
+import headers from './controllers/headers';
+import logAction from './controllers/logAction';
 
 import dotenv from 'dotenv';
 dotenv.config();
 
-const NAMESPACE = 'SERVER';
+const NAMESPACE = process.env.SERVER_NAMESPACE || 'SERVER';
 
 connectDB(process.env.MONGODB_STRING);
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100,
+    handler: (req, res) => {
+        return res.status(429).json({
+            error: 'Sent too many requests. Try again later.',
+        });
+    },
+});
 
 const app = express()
     .use(cors({ origin: process.env.CLIENT }))
     .use(express.json())
-    .use(express.urlencoded({ extended: false }));
-
-app.use((req, res, next) => {
-    logging.info(
-        NAMESPACE,
-        `METHOD - [${req.method}], URL - [${req.url}], IP - [${req.socket.remoteAddress}]`
-    );
-
-    next();
-});
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', process.env.CLIENT);
-    res.header(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    );
-
-    next();
-});
-
-// Routes
-app.use('/', indexRoutes);
-
-// Not found
-app.use((req, res) => {
-    const error = new Error('Route not found');
-
-    return res.status(404).json({
-        error: error.message,
-    });
-});
+    .use(express.urlencoded({ extended: false }))
+    .use(logAction)
+    .use(headers)
+    .use(limiter)
+    .use(routes)
+    .use(notFound);
 
 app.listen(config.server.port, () => {
     logging.info(NAMESPACE, `Server running at port ${config.server.port}`);

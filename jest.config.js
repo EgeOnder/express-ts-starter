@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     clearMocks: true,
     moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
     roots: ['<rootDir>/source'],

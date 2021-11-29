@@ -5,7 +5,6 @@ import app from '../app';
 describe('Get endpoints', () => {
     it('Main route of API', async () => {
         const res = await supertest(app).get('/');
-
         expect(res.statusCode).toEqual(200);
         expect(res.body).toHaveProperty('message');
     });

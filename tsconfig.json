@@ -1,10 +1,9 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
+        "target": "ESNext",
+        "module": "CommonJS",
         "sourceMap": true,
-        "outDir": "./dist",
-        "moduleResolution": "node",
+        "moduleResolution": "Node",
         "declaration": false,
         "composite": false,
         "noImplicitAny": true,
@@ -21,5 +20,6 @@
         "esModuleInterop": true,
         "baseUrl": ".",
         "rootDir": "source"
-    }
+    },
+    "include": ["source/"]
 }

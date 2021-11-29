@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "source/server.ts",
     "scripts": {
-        "build": "rm -rf build/ && prettier --write source/ && tsc",
+        "build": "rm -rf dist/ && prettier --write source/ && tsc",
         "serve": "nodemon source/server.ts",
         "test": "jest"
     },

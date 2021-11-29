@@ -1,6 +1,6 @@
 # Build folder can be
 # recreated with yarn build
-build/
+dist/
 
 # Ignore .DS_STORE file
 .DS_Store

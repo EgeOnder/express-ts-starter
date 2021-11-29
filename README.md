@@ -5,7 +5,8 @@ Typescript express backend starter code with mongoose and testing included.
 # TODOS
 
 -   [x] Testing with Jest
--   [ ] Authentication and mailer
+-   [x] Authentication
+-   [ ] Mailer
 -   [ ] Manage cookies
 -   [x] Rate limiting
 
